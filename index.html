@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	</head>
+	<body>
+
+		<div class="form-group">
+			<form action="order_recipe.php" method="post" enctype="multipart/form-data">
+  				<div class="form-group">
+		  				<label class="control-label col-md-3" for="exampleInputFile">
+		  						Fridge CSV
+		  				</label>
+		  				<div class="input-group col-md-7">
+							<label class="btn btn-default btn-file">
+								    Browse Fridge CSV File <input type="file" style="display: none;" name="fridge_csv_file">
+							</label>
+						</div>
+						
+				</div>
+				<div class="form-group">
+		  				<label class="control-label col-md-3" for="exampleInputFile">
+		  						Recipes JSON
+		  				</label>
+		  				<div class="input-group col-md-7">
+							<label class="btn btn-default btn-file">
+								    Browse Recipes JSON File<input type="file" style="display: none;" name="recipes_json_file">
+							</label>
+						</div>
+						
+				</div>
+				<div class="form-group">
+		  				<button type="submit" class="btn btn-primary">Submit</button>
+						
+				</div>
+			</form>
+		</div> 
+	</body>
+</html>

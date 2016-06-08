@@ -23,24 +23,45 @@ $reciepe_dates = array();
 				{
 					if(in_array($item,array_values($fitems)))
 					{
-						array_push($ing_dates,$fitems[3]);
+						array_push($ing_dates,str_replace('/','-',$fitems[3]));
 					}
 				}
 			}
 			
 			$date_arr = $ing_dates;
+			
+			$lowestDate = strtotime($ing_dates[0]);
+			foreach($ing_dates as $date){
+				
+			    if(strtotime($date) < $lowestDate){
+			        $lowestDate = strtotime($date);
+			    }
 
-			$min_key = array_search(min($ing_dates), $ing_dates);
+			}
+			
+			 $min_key = array_search(date( 'j-n-Y', $lowestDate), $ing_dates);
 			
 		
 
 		$reciepe_dates[$recipe->name] = $ing_dates[$min_key];
-		echo "<pre>";
-		print_r($reciepe_dates);
+		
 		}
+
 		$recipes = array_keys($reciepe_dates);
-		$min_key = array_search(min(array_values($reciepe_dates)), array_values($reciepe_dates));
-		echo $recipes[$min_key];
+		$final_r_dates = array_values($reciepe_dates);
+
+		$lowestDate = strtotime($final_r_dates[0]);
+			foreach($final_r_dates as $date){
+			    if(strtotime($date) < $lowestDate){
+			        $lowestDate = strtotime($date);
+			    }
+			}
+
+
+
+
+		$min_key = array_search(date( 'j-n-Y', $lowestDate), $final_r_dates);
+		echo "Recipe Finder selects : <b>".$recipes[$min_key] ."</b>";
 	}
 	else
 	{

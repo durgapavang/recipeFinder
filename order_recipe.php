@@ -63,8 +63,5 @@ $reciepe_dates = array();
 		$min_key = array_search(date( 'j-n-Y', $lowestDate), $final_r_dates);
 		echo "Recipe Finder selects : <b>".$recipes[$min_key] ."</b>";
 	}
-	else
-	{
-
-	}
+	
 ?>
